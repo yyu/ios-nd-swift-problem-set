@@ -8,7 +8,7 @@ import Foundation
 ### Exercise 10
 
 1. Write a function called `rest()` that prints out the following message: "Stay in bed."
-2. Declare a bool called `sick`.
+2. Declare a bool called `sick` with an initial value of true or false.
 3. Write a statement such that when `sick` is true the function `rest()` is called.
 */
 
@@ -16,7 +16,7 @@ import Foundation
 ### Exercise 11
 
 1. Write a function called `goToConcert()` that prints out the following message: "That vocalist is incredible!"
-2. Declare two bools called `finishedWork` and `gotTickets`.
+2. Declare two bools called `finishedWork` and `gotTickets` with initial values of true or false.
 3. Write a statement such that when both `finishedWork` and `gotTickets` are true the function `goToConcert()` is called.
  */
 
@@ -60,29 +60,28 @@ checkForRelease(bugs: bugs, music: hasMusic, levels: numberOfLevels)
 /*:
  ### Exercise 13
  
- In this exercise, imagine you are training for an Ironman Triathlon. We are going to write a program to check if you are physically prepared.
+ In this exercise, imagine you are training for a duathlon. We are going to write a program to check if you are physically prepared.
  
  We’ve defined three variables:
  
- - `canFinishSwim` (indicates if you can finish the swim portion)
+ - `name` (name of trainee)
  - `canFinishBike` (indicates if you can finish the bike portion)
  - `canFinishRun` (indicates if you can finish the running portion)
-
- Your task is to write an **if, else-if statement** that checks if a triathlete in training is ready for the Ironman:
- - If a trainee can finish all three components, the program should print out a message indicating that the person is ready.
- - If a person is not ready, the program should print out one element (swimming, biking, or running) to focus on.
- - Write your if statement in the function, func `checkTrainingStatus(name: canFinishSwim: canFinishBike: canFinishRun:)`.
+ 
+ Your task is to write an **if, else-if statement** that checks if an athlete-in-training is ready for the duathlon:
+ - If a trainee can finish both components, the program should print out a message indicating that the person is ready.
+ - If a trainee is not ready, the program should print out each element (biking, running, or both) that they cannot finish.
+ - Write your if statement in the function, func `checkTrainingStatus(name: canFinishBike: canFinishRun:)`.
  */
 let name: String = "Teresa"
-var canFinishSwim: Bool = true
 var canFinishBike: Bool = true
 var canFinishRun: Bool = true
 
-func checkTrainingStatus(name: String, swim: Bool, bike: Bool, run: Bool) {
+func checkTrainingStatus(name: String, bike: Bool, run: Bool) {
     //TODO: Add your if, else-if statement here!
 }
 
-checkTrainingStatus(name: name, swim: canFinishSwim, bike: canFinishBike, run: canFinishRun)
+checkTrainingStatus(name: name, bike: canFinishBike, run: canFinishRun)
 
 /*:
  ****

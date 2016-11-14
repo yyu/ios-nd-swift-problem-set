@@ -9,7 +9,7 @@ import Foundation
 var word = "shampoo"
 
 //: ### Exercise 6
-//: Declare two strings and concatenate them together to create a third string.
+//: Declare two strings and then use a single operator to concatenate them together to create a third string.
 
 //: ### Exercise 7
 //: Write code that deletes all occurrences of the word "like" in the following string.

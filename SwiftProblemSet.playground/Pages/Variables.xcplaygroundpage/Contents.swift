@@ -10,8 +10,8 @@
  
  - gallonsRemainingInTank (`Double`)
  - ageOfSpecimenInWeeks (`Int`)
- - studentNickname (`String`)
- - teaspoonsNutmeg (`Float`)
+ - birthplace (`String`)
+ - myFirstProgrammingLanguage (`String`)
  */
 
 //: ### Exercise 2
@@ -19,7 +19,7 @@
 var favoriteLanguage: Character = "Swift"
 gallonsRemainingInTank = "2"
 ageOfSpecimenInWeeks = 32.45
-let teaspoonsCinnamon: Int = teaspoonsNutmeg
+let bestProgrammingLanguage: Character = myFirstProgrammingLanguage
 
 //: ### Exercise 3
 //: Below is some code to reverse a string. We've declared `stringToReverse` and `arrayOfCharacters` as variables. Rewrite this code to reverse a string using only constants declared with `let`, no variables. **Note**: In the new version you may use as many constants as you'd like.
