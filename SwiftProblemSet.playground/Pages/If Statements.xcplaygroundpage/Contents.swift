@@ -11,7 +11,9 @@ import Foundation
 2. Declare a bool called `sick` with an initial value of true or false.
 3. Write a statement such that when `sick` is true the function `rest()` is called.
 */
-
+func rest() {
+    print("Stay in bed.")
+}
 /*: 
 ### Exercise 11
 
@@ -19,7 +21,14 @@ import Foundation
 2. Declare two bools called `finishedWork` and `gotTickets` with initial values of true or false.
 3. Write a statement such that when both `finishedWork` and `gotTickets` are true the function `goToConcert()` is called.
  */
-
+func goToConcert() {
+    print("That vocalist is incredible!")
+}
+var finishedWord = true
+var gotTickets = true
+if gotTickets && finishedWord {
+    goToConcert()
+}
 /*:
 ### Exercise 12
 
@@ -52,7 +61,9 @@ func release() {
 }
 
 func checkForRelease(bugs: Int, music: Bool, levels: Int) {
-    
+    if bugs < 10 && music && levels > 5 {
+        release()
+    }
 }
 
 checkForRelease(bugs: bugs, music: hasMusic, levels: numberOfLevels)
@@ -79,6 +90,16 @@ var canFinishRun: Bool = true
 
 func checkTrainingStatus(name: String, bike: Bool, run: Bool) {
     //TODO: Add your if, else-if statement here!
+    if canFinishRun && canFinishBike {
+        print("the person is ready")
+    } else {
+        if !canFinishRun {
+            print("the person cannot finish run")
+        }
+        if !canFinishBike {
+            print("the person cannot finish bike")
+        }
+    }
 }
 
 checkTrainingStatus(name: name, bike: canFinishBike, run: canFinishRun)
