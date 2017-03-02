@@ -56,17 +56,37 @@ var bugs = 9
 var hasMusic = true
 var numberOfLevels = 7
 
+let bugLimit = 10
+let minLevels = 6
+
 func release() {
     print("\(game) is now ready for sale.")
 }
 
-func checkForRelease(bugs: Int, music: Bool, levels: Int) {
-    if bugs < 10 && music && levels > 5 {
+func checkForRelease(bugs: Int, hasMusic: Bool, levels: Int) {
+    var releaseReady = true
+
+    if bugs >= bugLimit {
+        releaseReady = false
+        print("too many (\(bugs)) bugs. should be less than \(bugLimit).")
+    }
+
+    if !hasMusic {
+        releaseReady = false
+        print("no music, no good")
+    }
+
+    if levels < minLevels {
+        releaseReady = false
+        print("more levels needed: at least \(minLevels)")
+    }
+
+    if releaseReady {
         release()
     }
 }
 
-checkForRelease(bugs: bugs, music: hasMusic, levels: numberOfLevels)
+checkForRelease(bugs: bugs, hasMusic: hasMusic, levels: numberOfLevels)
 
 /*:
  ### Exercise 13
@@ -89,7 +109,6 @@ var canFinishBike: Bool = true
 var canFinishRun: Bool = true
 
 func checkTrainingStatus(name: String, bike: Bool, run: Bool) {
-    //TODO: Add your if, else-if statement here!
     if canFinishRun && canFinishBike {
         print("the person is ready")
     } else {

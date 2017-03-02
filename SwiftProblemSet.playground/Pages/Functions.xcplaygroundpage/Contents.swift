@@ -23,8 +23,19 @@ func emojiLove(s1: String, s2: String/* add parameters here */) {
 //: The function `median` should take three `Int` parameters and return the `Int` value in the middle.
 func median(/* add parameters here */num1: Int, num2: Int, num3: Int) -> Int /* define the return type */ {
     /* add function implementation here */
+    return  [num1, num2, num3].sorted()[1]
+}
+
+func hopefullyFastMedian(/* add parameters here */num1: Int, num2: Int, num3: Int) -> Int /* define the return type */ {
+    /* less readable but hopefully a little faster */
     return max(num1, num2) ^ max(num1, num3) ^ max(num2, num3)
 }
+
+// tried to do this but it's not allowed https://github.com/apple/swift-evolution/blob/master/proposals/0111-remove-arg-label-type-significance.md
+//     var med : (num1: Int, num2: Int, num3: Int) -> Int = hopefullyFastMedian
+// the following breaks function calls with arg labels
+//     var med = hopefullyFastMedian
+
 
 /* Example Function Call
  */
@@ -50,10 +61,17 @@ func median(/* add parameters here */num1: Int, num2: Int, num3: Int) -> Int /* 
  */
 func beginsWithVowel(/* add parameters here */_ s: String) -> Bool /* define the return type */ {
     /* add function implementation here */
-    let vowels = "aeiou"
-    let vowelCharacters = vowels.characters
-    let inputCharacters = s.lowercased().characters
-    return !s.isEmpty && vowelCharacters.contains(inputCharacters[s.startIndex])
+    let vowels = "aeiouAEIOU".characters
+
+    func isVowel(char: Character) -> Bool {
+        return vowels.contains(char)
+    }
+
+    func firstChar(str: String) -> Character {
+        return str.characters[str.startIndex]
+    }
+
+    return !s.isEmpty && isVowel(char: firstChar(str: s))
 }
 
 /* Example Function Call
@@ -79,17 +97,7 @@ func beginsWithVowel(/* add parameters here */_ s: String) -> Bool /* define the
  */
 func funWithWords(/* add parameters here */_ s: String) -> String /* define the return type */ {
     /* add function implementation here */
-    let vowels = "aeiouAEIOU".characters
-    func isVowel(char: Character) -> Bool {
-        return vowels.contains(char)
-    }
-    func isConsonant(char: Character) -> Bool {
-        return !isVowel(char: char);
-    }
-    func firstChar(str: String) -> Character {
-        return str.characters[str.startIndex]
-    }
-    return s.isEmpty ? "" : isVowel(char: firstChar(str: s)) ? s.uppercased() : s.lowercased()
+    return s.isEmpty ? "" : beginsWithVowel(s) ? s.uppercased() : s.lowercased()
 }
 
 /* Example Function Call
